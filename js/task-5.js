@@ -14,42 +14,52 @@
 // Индия - 80 кредитов
 // Ямайка - 120 кредитов
 let country = prompt('Укажите страну доставки:');
+const ABOLITION = 'Отменено пользователем!';
+let message;
 const price1 = 100;
 const price2 = 250;
 const price3 = 170;
 const price4 = 80;
 const price5 = 120;
+
 const country1 = 'Китай';
 const country2 = 'Чили';
 const country3 = 'Австралия';
 const country4 = 'Индия';
 const country5 = 'Ямайка';
+const country1Normalize = country1.toLowerCase();
+const country2Normalize = country2.toLowerCase();
+const country3Normalize = country3.toLowerCase();
+const country4Normalize = country4.toLowerCase();
+const country5Normalize = country5.toLowerCase();
 
 if (country === null) {
-  console.log('Отменено пользователем!');
+  message = ABOLITION;
 } else {
-  switch (country.toLowerCase()) {
-    case country1.toLowerCase():
-      alert(`Доставка в ${country1} будет стоить ${price1} кредитов`);
+  const countryNormalize = country.toLowerCase();
+  switch (countryNormalize) {
+    case country1Normalize:
+      message = `Доставка в ${country1} будет стоить ${price1} кредитов`;
       break;
 
-    case country2.toLowerCase():
-      alert(`Доставка в ${country2} будет стоить ${price2} кредитов`);
+    case country2Normalize:
+      message = `Доставка в ${country2} будет стоить ${price2} кредитов`;
       break;
 
-    case country3.toLowerCase():
-      alert(`Доставка в ${country3} будет стоить ${price3} кредитов`);
+    case country3Normalize:
+      message = `Доставка в ${country3} будет стоить ${price3} кредитов`;
       break;
 
-    case country4.toLowerCase():
-      alert(`Доставка в ${country4} будет стоить ${price4} кредитов`);
+    case country4Normalize:
+      message = `Доставка в ${country4} будет стоить ${price4} кредитов`;
       break;
 
-    case country5.toLowerCase():
-      alert(`Доставка в ${country5} будет стоить ${price5} кредитов`);
+    case country5Normalize:
+      message = `Доставка в ${country5} будет стоить ${price5} кредитов`;
       break;
 
     default:
-      alert('В вашей стране доставка не доступна');
+      message = 'В вашей стране доставка не доступна';
   }
 }
+alert(message);

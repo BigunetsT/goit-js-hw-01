@@ -10,12 +10,15 @@
 // let message;
 const ADMIN_PASSWORD = 'jqueryismyjam';
 let message;
+const ABOLITION = 'Отменено пользователем!';
+const ACCESS_IS_SETTLED = 'Добро пожаловать!';
+const ACCESS_IS_FORBIDDEN = 'Доступ запрещен, неверный пароль!';
 let input = prompt('Введите пароль:');
 if (input === null) {
-  message = 'Отменено пользователем!';
+  message = ABOLITION;
 } else if (input === ADMIN_PASSWORD) {
-  message = 'Добро пожаловать!';
+  message = ACCESS_IS_SETTLED;
 } else {
-  message = 'Доступ запрещен, неверный пароль!';
+  message = ACCESS_IS_FORBIDDEN;
 }
 alert(message);
